@@ -49,6 +49,7 @@
 								<Text text="{data>SupplierName}"/>
 							</cells>
 						</ColumnListItem>
+						
 					</items>
 				</Table>
 
