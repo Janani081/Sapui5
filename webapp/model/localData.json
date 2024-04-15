@@ -1,0 +1,120 @@
+
+{
+    "empStr": {
+       
+        "name": "Janani",
+        "city": 6500,
+        "state": "TN",
+        "country":"India",
+        "mobileno": 9933345566
+    },
+    "details":[
+        {"ShopName":"Sri Boutique",
+        "Category":"Womens",
+       "SupplierName":"Agaja"
+       
+    },
+    {"ShopName":"Sara Boutique",
+        "Category":"Womens",
+       "SupplierName":"Sara"
+    },
+    
+    {"ShopName":"Sprinkle Boutique",
+        "Category":"Womens",
+       "SupplierName":"Shreya"
+    },
+    {"ShopName":"Sara Boutique",
+        "Category":"Womens",
+       "SupplierName":"Sara"
+    },
+    {"ShopName":"Sara Boutique",
+        "Category":"Womens",
+       "SupplierName":"Sara"
+    },
+    {"ShopName":"Shresha Boutique",
+        "Category":"Womens",
+       "SupplierName":"Priya"
+    },
+    {"ShopName":"Red Line",
+        "Category":"Mens",
+       "SupplierName":"John"
+    },
+    {"ShopName":"Addicto",
+        "Category":"Mens",
+       "SupplierName":"Charlie"
+    },
+    {"ShopName":"Addicto",
+        "Category":"Mens",
+       "SupplierName":"Charlie"
+    },
+    {"ShopName":"First Cry",
+        "Category":"Kids",
+       "SupplierName":"Priya"
+    },
+    {"ShopName":"First Cry",
+        "Category":"Kids",
+       "SupplierName":"Priya"
+    }
+   
+    ],
+    
+    "ProductNames" : [{
+        "key" : "Sri Boutique",
+        "name" : "Sri Boutique"
+    }, {
+        "key" : "Sara Boutique",
+        "name" : "Sara Boutique"
+    }, {
+        "key" : "Shresha Boutique",
+        "name" : "Shresha Boutique"
+    }, {
+      "key" : "Sprinkle Boutique",
+      "name" : "Sprinkle Boutique"
+  }, {
+        "key" : "Red Line",
+        "name" : "Red Line"
+    }, {
+        "key" : "Addicto",
+        "name" : "Addicto"
+    },{
+      "key" : "Nesavu",
+      "name" : "Nesavu"
+  }, {
+        "key" : "First Cry",
+        "name" : "First Cry"
+    }],
+    "ProductCategories" : [{
+        "key" : "Womens",
+        "name" : "Womens"
+    }, {
+        "key" : "Mens",
+        "name" : "Mens"
+    }, {
+        "key" : "Kids",
+        "name" : "Kids"
+    }],
+    "ProductSuppliers": [{
+        "key" : "Agaja",
+        "name" : "Agaja"
+    }, {
+        "key" : "Sara",
+        "name" : "Sara"
+    }, {
+        "key" : "Priya",
+        "name" : "Priya"
+    }, {
+      "key" : "Shreya",
+      "name" : "Shreya"
+  }, {
+      "key" : "Charlie",
+      "name" : "Charlie"
+  }, {
+      "key" : "Manisha",
+      "name" : "Manisha"
+  }, {
+      "key" : "John",
+      "name" : "John"
+  }],
+"dump":10
+}
+

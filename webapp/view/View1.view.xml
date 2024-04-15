@@ -1,0 +1,64 @@
+<mvc:View controllerName="project2.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:f="sap.ui.layout.form"
+    xmlns="sap.m">
+   <Page title="Employee">
+			
+<!--Property Binding-->
+<f:SimpleForm editable="true" >
+<Label text="EmpId" />
+<Input id="idempId" value="{data>/empStr/empId}" width="30%"  />
+
+
+</f:SimpleForm>
+
+<!--Element Binding-->
+<f:SimpleForm editable="true" >
+<Label text="ShopName" />
+<Input id="ShopName" value="{data>/details/2/SupplierName}" width="30%"  />
+
+
+</f:SimpleForm>
+
+<!--Aggregation Binding-->
+
+<Table
+					id="table"
+					inset="false"
+					items="{
+						path: 'data>/details'
+					}"
+				>
+					<columns>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="ShopName"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="Category"/>
+						</Column>
+						<Column minScreenWidth="Tablet" demandPopin="true">
+							<Text text="SupplierName"/>
+						</Column>
+					</columns>
+
+					<items>
+						<ColumnListItem vAlign="Middle">
+							<cells>
+								<Text text="{data>ShopName}"  />
+								<Text text="{data>Category}" />
+								<Text text="{data>SupplierName}"/>
+							</cells>
+						</ColumnListItem>
+					</items>
+				</Table>
+
+	<!--Expression Binding-->
+
+    	<Button type="{=${data>/dump} > 15 ? 'Accept' : 'Reject' }"
+						text="Save"
+						press="onSave" width="50px"
+						>
+					
+				</Button>
+    </Page>
+</mvc:View>

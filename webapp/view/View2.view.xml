@@ -1,0 +1,45 @@
+<mvc:View 
+xmlns:core="sap.ui.core"
+controllerName="project2.controller.View2"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+    	xmlns="sap.m"
+      xmlns:v="sap.f"
+      xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form">
+ <OverflowToolbar >
+    <Button id="btt" text="previous" icon="sap-icon://close-command-field" press="onBttnPress"/>
+<ToolbarSpacer></ToolbarSpacer>
+	<Button id="btt1" text="next" icon="sap-icon://open-command-field" press="onBPress"/>
+</OverflowToolbar>
+                <core:Fragment fragmentName="project2.view.View2_showdata" type="XML" 
+							id="prefix1"/>    
+   <f:SimpleForm id="SimpleFormDisplay"
+   	    title="Address" editable="true" layout="ResponsiveGridLayout" labelSpanXL="1" labelSpanL="1" labelSpanM="1" labelSpanS="12"
+        adjustLabelSpan="false" emptySpanXL="5" emptySpanL="5" emptySpanM="5" emptySpanS="0" columnsXL="1" columnsL="1" columnsM="1"
+        singleContainerFullSize="false"	>
+      <f:content>
+                <Label text="Name" />
+				<Input  id="id1"  width="600px" />
+				
+				<Label text="MobileNo" />
+				<Input id="id2" width="600px" />
+				<Label text="City" />
+				<Input id="id3" width="600px" />
+                <Label text="State" />
+				<Input id="id4" width="600px" />
+				<Label text="Country" />
+				<Input  id="id5" width="600px" />
+                <Label text="" />
+               	<Button type="{=${data>/dump} > 15 ? 'Accept' : 'Reject' }"
+						text="Save"
+						press="onSave" width="50px"
+						>
+					
+				</Button>
+
+               <Button type="Reject" icon="sap-icon://show" press="onpressshow" width="50px"/>
+			</f:content>
+            
+		</f:SimpleForm>
+   	
+</mvc:View>

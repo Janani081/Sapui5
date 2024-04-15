@@ -1,0 +1,199 @@
+{
+  "_version": "1.59.0",
+  "sap.app": {
+    "id": "project2",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.13.1",
+      "toolsId": "a8029d82-fe59-4f56-b4d4-ddfa1899eff5"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": false,
+    "dependencies": {
+      "minUI5Version": "1.122.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "project2.i18n.i18n"
+        }
+      },
+    "data": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/localData.json"
+            },
+            
+    "oList": {
+                "type": "sap.ui.model.json.JSONModel",
+                "uri": "model/Data.json"
+            }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "project2.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "RouteView1",
+          "pattern": ":?query:",
+          "target": [
+            "TargetView1"
+          ]
+        },
+        {
+          "name": "RouteList",
+          "pattern": "List",
+          "target": [
+              "TargetList"
+          ]
+      },
+      {
+        "name": "Routeexcel",
+        "pattern": "excel",
+        "target": [
+            "Targetexcel"
+        ]
+    },
+      {
+        "name": "Routespreadsheet",
+        "pattern": "spreadsheet",
+        "target": [
+            "Targetspreadsheet"
+        ]
+    },
+    {
+      "name": "Routedynamic",
+      "pattern": "dynamic",
+      "target": [
+          "Targetdynamic"
+      ]
+  },
+  {
+    "name": "Routeuploadset",
+    "pattern": "uploadset",
+    "target": [
+        "Targetuploadset"
+    ]
+},
+  {
+    "name": "RouteView2",
+    "pattern": "View2",
+    "target": [
+        "TargetView2"
+    ]
+}
+      ],
+      "targets": {
+        "TargetView1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View1",
+          "viewName": "View1"
+        },
+        "TargetView2": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "View2",
+          "viewName": "View2"
+        },
+        "Targetexcel": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "excel",
+          "viewName": "excel"
+        },
+        "Targetspreadsheet": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "spreadsheet",
+          "viewName": "spreadsheet"
+        },
+        "TargetList": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "List",
+          "viewName": "List"
+        },
+        "Targetdynamic": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "dynamic",
+          "viewName": "dynamic"
+        },
+        "Targetuploadset": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "uploadset",
+          "viewName": "uploadset"
+        }
+
+      }
+    },
+    "rootView": {
+      "viewName": "project2.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

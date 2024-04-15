@@ -1,0 +1,44 @@
+<core:FragmentDefinition id="prefix1" class="sapUiSizeCompact" xmlns="sap.m" 
+		xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+<Dialog id="iddialog" >
+<endButton>
+<Button text="close" press="onclose"></Button>
+</endButton>
+<VBox>
+<f:SimpleForm id="SimpleFormDisplay1"
+			editable="false"
+			layout="ResponsiveGridLayout"
+			title="Address"
+			labelSpanXL="3"
+			labelSpanL="3"
+			labelSpanM="3"
+			labelSpanS="12"
+			adjustLabelSpan="false"
+			emptySpanXL="4"
+			emptySpanL="4"
+			emptySpanM="4"
+			emptySpanS="0"
+			columnsXL="1"
+			columnsL="1"
+			columnsM="1"
+			singleContainerFullSize="false"
+             >
+			<f:content>
+				<Label text="Name" />
+				<Text text="{oModel>/name}"  />
+				<Label text="MobileNo" />
+				<Text text="{oModel>/mobileno}"  />
+				<Label text="City" />
+				<Text text="{oModel>/city}"  />
+                <Label text="State" />
+				<Text text="{oModel>/state}"  />
+				<Label text="Country" />
+				<Text text="{oModel>/country}" />
+                
+               
+			</f:content>
+		</f:SimpleForm>
+</VBox>
+</Dialog>
+
+</core:FragmentDefinition>

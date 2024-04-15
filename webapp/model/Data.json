@@ -1,0 +1,12 @@
+{
+    "results":[
+    {"ReqNum":"0001",
+    "ChildMatnr":"Laptop",
+   "Dwerk":"3000"
+   
+},
+{"ReqNum":"0002",
+"ChildMatnr":"SmartWatch",
+"Dwerk":"3001"
+}]
+}
