@@ -1,0 +1,405 @@
+<mvc:View 
+xmlns:core="sap.ui.core"
+controllerName="project2.controller.OEEdashboard"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true" 
+    	xmlns="sap.m"
+		xmlns:f="sap.f"
+        xmlns:l="sap.ui.layout"
+			xmlns:viz="sap.viz.ui5.controls"
+			xmlns:w="sap.ui.integration.widgets"
+				xmlns:c="sap.suite.ui.microchart"
+		xmlns:fb="sap.ui.comp.filterbar"
+		xmlns:svm="sap.ui.comp.smartvariants">
+   	<f:DynamicPage headerExpanded="{/headerExpanded}">
+			
+			<f:header>
+				<f:DynamicPageHeader>
+					<f:content>
+                    
+						<fb:FilterBar id="filterbar" persistencyKey="myPersKey" useToolbar="false" search=".onSearch" filterChange=".onFilterChange" afterVariantLoad=".onAfterVariantLoad">
+							<fb:filterItems>
+								<fb:FilterItem name="Machine" label="Machine">
+									<fb:control>
+										<MultiComboBox id="n1"
+											name="Machine"
+											selectionChange=".onSelectionChange1"
+											items="{
+												path: '',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="Week" label="Week">
+									<fb:control>
+										<MultiComboBox id="n2"
+											name="Week"
+											selectionChange=".onSelectionChange2"
+											items="{
+												path: '',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterItem>
+								<fb:FilterItem name="Month" label="Month">
+									<fb:control>
+										<MultiComboBox id="n3"
+											name="Month"
+											selectionChange=".onSelectionChange3"
+											items="{
+												path: '',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterItem>
+                                <fb:FilterItem name="Year" label="Year">
+									<fb:control>
+										<MultiComboBox id="n4"
+											name="Year"
+											selectionChange=".onSelectionChange3"
+											items="{
+												path: '',
+												templateShareable: true
+											}"
+										>
+											<core:Item key="" text=""/>
+										</MultiComboBox>
+									</fb:control>
+								</fb:FilterItem>
+							</fb:filterItems>
+						</fb:FilterBar>
+					</f:content>
+				</f:DynamicPageHeader>
+			</f:header>
+			<f:content class="b">
+				   <l:BlockLayout>
+                <l:BlockLayoutRow>
+                    <!-- Table Column -->
+                    <l:BlockLayoutCell width="50%">
+                        <Table class="customTableHeight">
+                            <columns>
+                                <Column>
+                                    <Text text="Machine" />
+                                </Column>
+                                <Column>
+                                    <Text text="OEE" />
+                                </Column>
+								 <Column>
+                                    <Text text="Availability" />
+                                </Column>
+								 <Column>
+                                    <Text text="Productivity" />
+                                </Column>
+								 <Column>
+                                    <Text text="Quality" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="10/10/2024" />
+                                        <Text text="53" />
+										<Text text="57" />
+                                        <Text text="93" />
+										<Text text="100" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="W-51" />
+                                        <Text text="53" />
+										<Text text="57" />
+                                        <Text text="93" />
+										<Text text="100" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="Oct" />
+                                        <Text text="72" />
+										<Text text="72" />
+                                        <Text text="99" />
+										<Text text="100" />
+                                        
+                                    </cells>
+                                 </ColumnListItem>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="2018-19" />
+                                        <Text text="74" />
+										<Text text="73" />
+                                        <Text text="93" />
+										<Text text="100" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+                    </l:BlockLayoutCell>
+                    <!-- Bar Chart Column -->
+					 <l:BlockLayoutCell width="50%">
+                   <VBox alignItems="Center" justifyContent="Center">
+                           	<w:Card manifest="{manifests>/stackedColumn}">
+						<w:layoutData>
+							<f:GridContainerItemLayoutData rows="5" columns="4" />
+						</w:layoutData>
+					</w:Card>
+                        </VBox>
+						</l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+
+
+				<l:BlockLayoutRow>
+                    <!-- Table Column -->
+                    <l:BlockLayoutCell width="60%">
+					<Label text="Day"/>
+		  <Table items="{/items}" id="MyTable" >
+                            <columns>
+                                <Column>
+                                    <Text text="Machine"  />
+                                </Column>
+                                <Column>
+                                    <Text text="OEE" />
+                                </Column>
+								 <Column>
+                                    <Text text="A" />
+                                </Column>
+								 <Column>
+                                    <Text text="P" />
+                                </Column>
+								 <Column>
+                                    <Text text="Q"  />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+		</l:BlockLayoutCell>
+		 <l:BlockLayoutCell width="60%">
+		 <Label text="Week"/>
+		  <Table items="{/items}">
+                            <columns>
+                                <Column>
+                                    <Text text="Machine" />
+                                </Column>
+                                <Column>
+                                    <Text text="OEE" />
+                                </Column>
+								 <Column>
+                                    <Text text="A" />
+                                </Column>
+								 <Column>
+                                    <Text text="P" />
+                                </Column>
+								 <Column>
+                                    <Text text="Q" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+		</l:BlockLayoutCell>
+		
+                </l:BlockLayoutRow>
+
+
+				<l:BlockLayoutRow>
+                    <!-- Table Column -->
+                    <l:BlockLayoutCell width="60%">
+					 <Label text="Month"/>
+		  <Table items="{/items}" >
+                            <columns>
+                                <Column>
+                                    <Text text="Machine" />
+                                </Column>
+                                <Column>
+                                    <Text text="OEE"  />
+                                </Column>
+								 <Column>
+                                    <Text text="A"  />
+                                </Column>
+								 <Column>
+                                    <Text text="P" />
+                                </Column>
+								 <Column>
+                                    <Text text="Q"  />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+		</l:BlockLayoutCell>
+		 <l:BlockLayoutCell width="60%">
+		 <Label text="Year"/>
+		  <Table items="{/items}">
+		   
+                            <columns>
+                                <Column>
+                                    <Text text="Machine" />
+                                </Column>
+                                <Column>
+                                    <Text text="OEE" />
+                                </Column>
+								 <Column>
+                                    <Text text="A" />
+                                </Column>
+								 <Column>
+                                    <Text text="P" />
+                                </Column>
+								 <Column>
+                                    <Text text="Q" />
+                                </Column>
+                            </columns>
+                            <items>
+                                <ColumnListItem>
+                                    <cells>
+                                        <Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        <Text text="{Value}" />
+										<Text text="{Name}" />
+                                        
+                                    </cells>
+                                </ColumnListItem>
+                            </items>
+                        </Table>
+		</l:BlockLayoutCell>
+		
+                </l:BlockLayoutRow>
+				 <l:BlockLayoutRow>
+                    <!-- Table Column -->
+					
+                    <l:BlockLayoutCell width="100%">
+					<Label text="Machine:" />
+                    <Select id="mySelect" change="onSelectChange">
+                       <core:Item key="1" text="Kinki" />
+                       <core:Item key="2" text="Magna" />
+                       <core:Item key="3" text="Nova" />
+                   </Select>
+
+				
+		</l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+           
+                <l:BlockLayoutRow>
+                    <!-- Table Column -->
+					
+                    <l:BlockLayoutCell width="100%">
+					
+
+					<Label text="Over All OEE Trend"/>
+                    <VBox id="vbox1" visible="true">
+		<FlexBox width="60rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+			<items>
+				<c:InteractiveLineChart selectionChanged="selectionChanged" press="press" precedingPoint="15"
+									  succeedingPoint="89">
+					<c:points>
+					<c:InteractiveLineChartPoint value="0" label="Jan" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="0" label="Feb"/>
+						<c:InteractiveLineChartPoint value="0" label="Mar" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="0" label="Apr"/>
+						<c:InteractiveLineChartPoint value="33.1" label="May" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="12" label="June"/>
+						<c:InteractiveLineChartPoint value="51.4" label="July" secondaryLabel="Q3"/>
+						<c:InteractiveLineChartPoint value="52" label="Aug"/>
+						<c:InteractiveLineChartPoint value="69.9" label="Sep"/>
+						<c:InteractiveLineChartPoint value="0.9" label="Oct" secondaryLabel="Q4"/>
+						<c:InteractiveLineChartPoint value="69.9" label="Nov"/>
+						<c:InteractiveLineChartPoint value="0.9" label="Dec" secondaryLabel="Q4"/>
+					</c:points>
+				</c:InteractiveLineChart>
+			</items>
+		</FlexBox>
+        </VBox>
+         <VBox id="vbox2" visible="false">
+		<FlexBox width="60rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+			<items>
+				<c:InteractiveLineChart selectionChanged="selectionChanged" press="press" precedingPoint="15"
+									  succeedingPoint="89">
+					<c:points>
+					<c:InteractiveLineChartPoint value="10.0" label="Jan" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="20.0" label="Feb"/>
+						<c:InteractiveLineChartPoint value="15.0" label="Mar" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="12.0" label="Apr"/>
+						<c:InteractiveLineChartPoint value="33.1" label="May" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="12" label="June"/>
+						<c:InteractiveLineChartPoint value="54.4" label="July" secondaryLabel="Q3"/>
+						<c:InteractiveLineChartPoint value="72" label="Aug"/>
+						<c:InteractiveLineChartPoint value="89.9" label="Sep"/>
+						<c:InteractiveLineChartPoint value="0.1" label="Oct" secondaryLabel="Q4"/>
+						<c:InteractiveLineChartPoint value="9.9" label="Nov"/>
+						<c:InteractiveLineChartPoint value="0.9" label="Dec" secondaryLabel="Q4"/>
+					</c:points>
+				</c:InteractiveLineChart>
+			</items>
+		</FlexBox>
+        </VBox>
+         <VBox id="vbox3" visible="false">
+		<FlexBox width="60rem" height="10rem" alignItems="Center" class="sapUiSmallMargin">
+			<items>
+				<c:InteractiveLineChart selectionChanged="selectionChanged" press="press" precedingPoint="15"
+									  succeedingPoint="89">
+					<c:points>
+					<c:InteractiveLineChartPoint value="12.0" label="Jan" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="23.0" label="Feb"/>
+						<c:InteractiveLineChartPoint value="10.0" label="Mar" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="12.0" label="Apr"/>
+						<c:InteractiveLineChartPoint value="13.1" label="May" secondaryLabel="Q2"/>
+						<c:InteractiveLineChartPoint value="15" label="June"/>
+						<c:InteractiveLineChartPoint value="54.4" label="July" secondaryLabel="Q3"/>
+						<c:InteractiveLineChartPoint value="52" label="Aug"/>
+						<c:InteractiveLineChartPoint value="69.9" label="Sep"/>
+						<c:InteractiveLineChartPoint value="0.9" label="Oct" secondaryLabel="Q4"/>
+						<c:InteractiveLineChartPoint value="69.9" label="Nov"/>
+						<c:InteractiveLineChartPoint value="0.9" label="Dec" secondaryLabel="Q4"/>
+					</c:points>
+				</c:InteractiveLineChart>
+			</items>
+		</FlexBox>
+        </VBox>
+		</l:BlockLayoutCell>
+                </l:BlockLayoutRow>
+            </l:BlockLayout>
+			</f:content>
+		</f:DynamicPage>
+</mvc:View>

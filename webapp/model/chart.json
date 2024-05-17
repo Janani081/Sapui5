@@ -1,0 +1,34 @@
+{
+	"milk": [
+		{
+			"Material": "0001",
+			"Accept": "431",
+			"Reject": "230"
+		},
+		{
+			"Material": "0002",
+			"Accept": "494",
+			"Reject": "238"
+		},
+		{
+			"Material": "0003",
+			"Accept": "491",
+			"Reject": "221"
+		},
+		{
+			"Material": "0004",
+			"Accept": "536",
+			"Reject": "280"
+		},
+		{
+			"Material": "0005",
+			"Accept": "436",
+			"Reject": "250"
+		},
+		{
+			"Material": "0006",
+			"Accept": "336",
+			"Reject": "150"
+		}
+	]
+}

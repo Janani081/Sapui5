@@ -1,0 +1,127 @@
+<mvc:View controllerName="project2.controller.dashboard" xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc" xmlns:grid="sap.ui.layout.cssgrid"
+    	xmlns:core="sap.ui.core" xmlns:f="sap.f">
+
+<Page title="Dashboard" showHeader="true">
+        <content>
+            <Table id="table" items="{
+						path: 'value>/results'
+					}">
+                <columns>
+                     <Column>
+                        <Text text="" />
+                    </Column>
+                    <Column>
+                        <Text  text="Target" />
+                    </Column>
+                    <Column>
+                        <Text  text="Day" />
+                    </Column>
+                    <Column>
+                        <Text  text="Week" />
+                    </Column>
+                    <Column>
+                        <Text  text="Month" />
+                    </Column>
+                    <Column>
+                        <Text  text="Year" />
+                    </Column>
+                   
+                </columns>
+                <items>
+                    <ColumnListItem  >
+                        <cells>
+                            <Text class="rowHighAge" text="{value>Imd}" />
+                            <Text class="rowHighAge" text="{value>Target}" />
+                      <f:GridList id="gridList" items="" class="sapUiResponsiveContentPadding">
+		              
+			                   <f:GridListItem
+			                     press="onPress"
+			                      highlight="Information"
+                                  type="Navigation"
+			                             >
+			
+                                <VBox class="sapUiSmallMargin">
+					            <layoutData>
+						          <FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+					           </layoutData>
+                               	<core:Icon
+						src="{value>Icon}"
+						size="2.625rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+                            <!-- <Title text="OEEE" wrapping="true" /> -->
+					           <Label text="{value>Day}" wrapping="true" />
+                             
+				            </VBox>
+                           </f:GridListItem>
+		                 </f:GridList>
+                       
+                      
+                         <Panel id="panelForGridList1" backgroundDesign="Transparent">
+                                <f:GridList id="gridList1" items="">
+			                    <f:GridListItem highlight="Warning">
+                                <VBox class="sapUiSmallMargin">
+					            <layoutData>
+						          <FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+					           </layoutData>
+                                	<core:Icon
+						src="{value>Icon}"
+						size="2.625rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+                            <!-- <Title text="OEEE" wrapping="true" /> -->
+					           <Label text="{value>Week}" wrapping="true" />
+
+                               <!-- <ProgressIndicator
+                        width="100%"
+                        state="Success"/> -->
+				            </VBox>
+                           </f:GridListItem>
+		                 </f:GridList>
+                       </Panel>
+                           <Panel id="panelForGridList2" backgroundDesign="Transparent">
+                                <f:GridList id="gridList2" items="">
+			                    <f:GridListItem highlight="Error">
+                                <VBox class="sapUiSmallMargin">
+					            <layoutData>
+						          <FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+					           </layoutData>
+                                	<core:Icon
+						src="{value>Icon}"
+						size="2.625rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+                            <!-- <Title text="OEEE" wrapping="true" /> -->
+					           <Label text="{value>Month}" wrapping="true" />
+				            </VBox>
+                           </f:GridListItem>
+		                 </f:GridList>
+                       </Panel>
+                        <Panel id="panelForGridList3" backgroundDesign="Transparent">
+                                <f:GridList id="gridList3" items="">
+			                    <f:GridListItem highlight="Success">
+                                <VBox class="sapUiSmallMargin">
+					            <layoutData>
+						          <FlexItemData growFactor="1" shrinkFactor="0" /> <!-- Don't shrink below minimum size. Fill space if available. -->
+					           </layoutData>
+                                	<core:Icon
+						src="{value>Icon}"
+						size="2.625rem"
+						color="Default"
+						class="sapUiTinyMarginBottom" />
+                            <!-- <Title text="OEEE" wrapping="true" /> -->
+					           <Label text="{value>Year}" wrapping="true" />
+				            </VBox>
+                           </f:GridListItem>
+		                 </f:GridList>
+                       </Panel>
+                            
+                        </cells>
+                    </ColumnListItem>
+                </items>
+            </Table>
+        </content>
+    </Page>
+   
+</mvc:View>

@@ -63,10 +63,36 @@
                 "uri": "model/localData.json"
             },
             
+            "value": {
+                        "type": "sap.ui.model.json.JSONModel",
+                        "uri": "model/dashboard.json"
+                    },
+                    
     "oList": {
                 "type": "sap.ui.model.json.JSONModel",
                 "uri": "model/Data.json"
-            }
+            },
+      
+				"excelData": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/excelData.json"
+				},
+      
+				"chart": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/chart.json"
+				},
+      
+				"temp": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/data.json"
+				},
+      
+				"manifests": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/cardchart.json"
+				}
+			
     },
     "resources": {
       "css": [
@@ -107,13 +133,39 @@
             "Targetexcel"
         ]
     },
+    {
+      "name": "Routedashboard",
+      "pattern": "dashboard",
+      "target": [
+          "Targetdashboard"
+      ]
+  },
+    {
+      "name": "Routeexceltemplate",
+      "pattern": "exceltemplate",
+      "target": [
+          "Targetexceltemplate"
+      ]
+  },
       {
         "name": "Routespreadsheet",
         "pattern": "spreadsheet",
         "target": [
             "Targetspreadsheet"
         ]
-    },
+    }, {
+      "name": "Routedynamicdashboard",
+      "pattern": "dynamicdashboard",
+      "target": [
+          "Targetdynamicdashboard"
+      ]
+  },{
+      "name": "RouteOEEdashboard",
+      "pattern": "OEEdashboard",
+      "target": [
+          "TargetOEEdashboard"
+      ]
+  },
     {
       "name": "Routedynamic",
       "pattern": "dynamic",
@@ -121,6 +173,20 @@
           "Targetdynamic"
       ]
   },
+  {
+    "name": "Routegridlist",
+    "pattern": "gridlist",
+    "target": [
+        "Targetgridlist"
+    ]
+},
+  {
+    "name": "Routecolumnchart",
+    "pattern": "columnchart",
+    "target": [
+        "Targetcolumnchart"
+    ]
+},
   {
     "name": "Routeuploadset",
     "pattern": "uploadset",
@@ -144,6 +210,20 @@
           "viewId": "View1",
           "viewName": "View1"
         },
+        "Targetdashboard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "dashboard",
+          "viewName": "dashboard"
+        },
+        "TargetOEEdashboard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "OEEdashboard",
+          "viewName": "OEEdashboard"
+        },
         "TargetView2": {
           "viewType": "XML",
           "transition": "slide",
@@ -165,12 +245,33 @@
           "viewId": "spreadsheet",
           "viewName": "spreadsheet"
         },
+        "Targetdynamicdashboard": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "dynamicdashboard",
+          "viewName": "dynamicdashboard"
+        },
+        "Targetcolumnchart": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "columnchart",
+          "viewName": "columnchart"
+        },
         "TargetList": {
           "viewType": "XML",
           "transition": "slide",
           "clearControlAggregation": false,
           "viewId": "List",
           "viewName": "List"
+        },
+        "Targetgridlist": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "gridlist",
+          "viewName": "gridlist"
         },
         "Targetdynamic": {
           "viewType": "XML",
@@ -185,6 +286,13 @@
           "clearControlAggregation": false,
           "viewId": "uploadset",
           "viewName": "uploadset"
+        },
+        "Targetexceltemplate": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "exceltemplate",
+          "viewName": "exceltemplate"
         }
 
       }

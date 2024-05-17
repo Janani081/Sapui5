@@ -1,0 +1,40 @@
+{
+ "results":[
+    {
+        "Imd":"OEE",
+        "Target":"100%",
+        "Icon":"sap-icon://activities",
+        "Day": "118",
+        "Week": "96",
+        "Month": "100",
+        "Year": "74"
+
+    },
+   { 
+    "Imd":"COPQ",
+    "Target":"0%",
+    "Icon":"sap-icon://badge",
+    "Day": "18",
+    "Week": "92",
+    "Month": "0",
+    "Year": "76"
+   },
+   { 
+    "Imd":"Yeild",
+    "Target":"100%",
+    "Icon":"sap-icon://cloud-check",
+    "Day": "58",
+        "Week": "96",
+        "Month": "100",
+        "Year": "74"
+   },
+   { 
+    "Imd":"Conversio in Cost",
+    "Target":"Rs 28",
+    "Icon":"sap-icon://lead",
+    "Day": "168",
+        "Week": "96",
+        "Month": "100",
+        "Year": "74"
+   }]
+}

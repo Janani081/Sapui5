@@ -1,0 +1,109 @@
+{
+	"stackedColumn": {
+		"sap.app": {
+			"id": "sample.CardsLayout.model.Analytical",
+			"type": "card"
+		},
+		"sap.card": {
+			"type": "Analytical",
+			"header": {
+				"type": "Numeric",
+				"data": {
+					"json": {
+						"n": "43.2",
+						"u": "%",
+						"trend": "Down",
+						"valueColor": "Good"
+					}
+				},
+				"title": "Over All OEE Trend - Analytical",
+				"mainIndicator": {
+					"number": "{n}",
+					"unit": "{u}",
+					"trend": "{trend}",
+					"state": "{valueColor}"
+				}
+			},
+			"content": {
+				"chartType": "StackedColumn",
+				"legend": {
+					"visible": true,
+					"position": "Bottom",
+					"alignment": "Left"
+				},
+				"plotArea": {
+					"dataLabel": {
+						"visible": false,
+						"showTotal": false
+					},
+					"categoryAxisText": {
+						"visible": false
+					},
+					"valueAxisText": {
+						"visible": false
+					}
+				},
+				"title": {
+					"visible": false
+				},
+				"measureAxis": "valueAxis",
+				"dimensionAxis": "categoryAxis",
+				"data": {
+					"json": {
+						"list": [
+							{
+								"Category": "Day",
+								"Revenue": 431000.22,
+								"Cost": 230000.00,
+								"Target": 500000.00,
+								"Budget": 210000.00
+							},
+							{
+								"Category": "Week",
+								"Revenue": 404000.30,
+								"Cost": 234000.00,
+								"Target": 540000.00,
+								"Budget": 204000.00
+							},
+							{
+								"Category": "Month",
+								"Revenue": 494000.30,
+								"Cost": 238000.00,
+								"Target": 500000.00,
+								"Budget": 224000.00
+							},
+							{
+								"Category": "Year",
+								"Revenue": 491000.17,
+								"Cost": 221000.00,
+								"Target": 500000.00,
+								"Budget": 238000.00
+							}
+						]
+					},
+					"path": "/list"
+				},
+				"dimensions": [
+					{
+						"label": "Categories",
+						"value": "{Category}"
+					}
+				],
+				"measures": [
+					{
+						"label": "Revenue",
+						"value": "{Revenue}"
+					},
+					{
+						"label": "Cost",
+						"value": "{Cost}"
+					},
+					{
+						"label": "Target",
+						"value": "{Target}"
+					}
+				]
+			}
+		}
+	}
+}
